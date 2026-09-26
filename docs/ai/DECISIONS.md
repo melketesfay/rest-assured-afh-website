@@ -211,6 +211,16 @@ Decision: SEO and deployment/documentation should be handled before a larger V2 
 
 Reason: Better design does not solve discoverability or operational quality. Local SEO and reliable deployment are higher priority.
 
+### September 2026 user-requested visual refresh
+
+The user explicitly requested a modern visual update before resuming SEO work. This supersedes the earlier ordering for the current branch, not the requirement for a future SEO audit. Work is on `feat/modern-website-refresh`.
+
+User clarification: modernization means radii, colors, typography, and subtle animations, not a wholesale replacement of the layout. The taller navigation and photo-led hero were rejected. Preserve the original slim mobile header and logo-led banner, including dimensions, spacing, and content order. The original layout has been restored; do not reintroduce the rejected design.
+
+The user subsequently requested the desktop addition. At 1100px and above, the original logo and introductory text/contact actions are arranged side by side without decorative containers; the existing photos follow below. The same DOM content is reused, and mobile layout remains unchanged. Keep the skip-to-content link for keyboard access and reveal it only while focused.
+
+A sharper SVG banner should reproduce the existing composition, not introduce a different layout. Preserve all business information and the established sage/gold identity. Keep Montserrat headings, Inter body text, lightweight animation, reduced-motion support, and usable content/navigation without JavaScript. No framework, new runtime dependency, or deployment change is required.
+
 ### Local SEO approach
 
 Decision: Use legitimate but assertive local SEO.

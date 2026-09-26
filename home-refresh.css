@@ -1,0 +1,292 @@
+/* Keep the established mobile layout; desktop additions are scoped below. */
+.home-page {
+  --clay: #805f43;
+  --shadow-md: 0 8px 24px rgba(39, 49, 39, 0.06);
+  --shadow-lg: 0 16px 36px rgba(39, 49, 39, 0.08);
+  --shadow-xl: 0 20px 44px rgba(39, 49, 39, 0.1);
+  background: #fffefd;
+}
+
+.home-page .eyebrow {
+  color: var(--clay);
+  letter-spacing: 0;
+}
+
+.home-page .brand-afh-v22 {
+  color: var(--clay);
+}
+
+/* Reserve the existing banner's dimensions before its image has loaded. */
+.home-page .logo-showcase-card {
+  display: block;
+}
+
+.home-page .logo-showcase-card img {
+  aspect-ratio: 3 / 2;
+  margin-inline: auto;
+}
+
+.home-intro {
+  display: contents;
+}
+
+.home-intro .hero-image-frame,
+.home-intro .mini-panel {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.home-intro .hero-image-main img,
+.home-intro .mini-panel img {
+  border-radius: 0;
+}
+
+/* Keep a visible focus ring outside the clipped photo frames. */
+.home-intro .hero-image-frame:focus-within,
+.home-intro .mini-panel:focus-within {
+  outline: 3px solid #9a713b;
+  outline-offset: 4px;
+}
+
+.home-page .site-header {
+  background: rgba(255, 254, 253, 0.96);
+  border-bottom-color: var(--line);
+  box-shadow: 0 2px 12px rgba(39, 49, 39, 0.04);
+}
+
+.home-page .site-nav a {
+  transition: color 180ms ease;
+  text-underline-offset: 5px;
+}
+
+.home-page .site-nav a:hover,
+.home-page .site-nav a:focus-visible {
+  text-decoration: underline;
+}
+
+.home-page .button {
+  border-radius: 8px;
+  transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.home-page .button-primary {
+  background: var(--sage-deep);
+  color: white;
+}
+
+.home-page .button-primary:hover {
+  background: #354e40;
+  color: white;
+}
+
+.home-page .button-secondary {
+  background: #fffefd;
+  border-color: #74846e;
+  color: var(--sage-deep);
+}
+
+.home-page .button-secondary:hover {
+  background: #edf2ee;
+  color: #273127;
+}
+
+.home-page .service-card,
+.home-page .gallery-card,
+.home-page .intro-ribbon article,
+.home-page .real-photo-strip img,
+.home-page .stack-card,
+.home-page .owner-visual-card,
+.home-page .owner-content-card,
+.home-page .owner-portrait,
+.home-page .owner-stat-card,
+.home-page .owner-highlights span,
+.home-page .contact-card,
+.home-page .contact-info-grid > *,
+.home-page .map-shell {
+  border-radius: 8px;
+}
+
+.home-page .owner-quote {
+  border-radius: 0 8px 8px 0;
+}
+
+.home-page .service-card,
+.home-page .gallery-card,
+.home-page .intro-ribbon article {
+  border: 1px solid var(--line);
+  background: #fffefd;
+}
+
+.home-page .contact-card {
+  background: #354e40;
+}
+
+.home-page .contact-card .eyebrow {
+  color: white;
+}
+
+.home-page .contact-actions .button-primary {
+  background: #fffefd;
+  color: #354e40;
+}
+
+.home-page .contact-actions .button-secondary {
+  background: transparent;
+  color: white;
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.home-page .contact-actions .button:hover {
+  background: #edf2ee;
+  color: #273127;
+}
+
+@media (min-width: 1100px) {
+  .home-intro {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 2.5rem 3rem;
+    align-items: center;
+    width: min(var(--container), calc(100% - 2rem));
+    margin: 2rem auto 2.5rem;
+  }
+
+  .home-intro .logo-showcase {
+    grid-column: 1;
+    grid-row: 1;
+    margin: 0;
+    padding: 0;
+  }
+
+  .home-intro .logo-showcase .container {
+    width: 100%;
+  }
+
+  .home-page .home-intro .logo-showcase-card {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .home-intro .logo-showcase-card img {
+    border-radius: 0;
+  }
+
+  /* Reuse the same content in reading order instead of duplicating it. */
+  .home-intro .hero,
+  .home-intro .hero-grid {
+    display: contents;
+  }
+
+  .home-intro .hero-copy {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+  }
+
+  .home-intro h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  .home-intro .hero-lead {
+    margin: 1.1rem 0 1.4rem;
+    font-size: 1rem;
+  }
+
+  .home-intro .hero-actions {
+    gap: 0.65rem;
+  }
+
+  .home-intro .hero-actions .button {
+    padding-inline: 1.1rem;
+    font-size: 0.875rem;
+  }
+
+  .home-intro .hero-badges {
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .home-intro .hero-badges span {
+    padding: 0.4rem 0.65rem;
+    font-size: 0.75rem;
+  }
+
+  .home-intro .hero-visual-card {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    gap: 1.5rem;
+  }
+
+  .home-intro .hero-image-main img {
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 640 / 404;
+  }
+
+  .home-intro .hero-mini-panels {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
+    gap: 1rem;
+  }
+
+  .home-intro .mini-panel {
+    min-height: 0;
+  }
+
+  .home-intro .mini-panel img {
+    min-height: 0;
+  }
+
+  .home-intro .quote-panel p {
+    padding: 1.25rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 760px) {
+  .js .home-page .site-nav {
+    display: flex;
+    max-height: calc(100svh - 150px);
+    overflow-y: auto;
+    border-radius: 8px;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 180ms;
+  }
+
+  .js .home-page .site-nav.open {
+    visibility: visible;
+    opacity: 1;
+    transform: none;
+    pointer-events: auto;
+  }
+
+  html:not(.js) .home-page .header-inner {
+    flex-wrap: wrap;
+  }
+
+  html:not(.js) .home-page .nav-toggle {
+    display: none;
+  }
+
+  html:not(.js) .home-page .site-nav {
+    display: flex;
+    position: static;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-page .site-nav,
+  .home-page .site-nav a,
+  .home-page .button {
+    transition: none;
+  }
+}

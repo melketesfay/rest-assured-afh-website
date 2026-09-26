@@ -17,17 +17,17 @@ This file lists concrete next actions for future AI sessions. Keep it short and 
 - Save-contact page uses approved licensed nurse/nurse-led wording.
 - Mobile menu button changes from hamburger to close icon while open.
 
-## Pause Note
+## Active Design Preview
 
-Project work is paused after the June 2026 documentation, Firebase Hosting, custom-domain, 404, save-contact, and mobile-menu polish work. Resume from latest `main` and open a focused branch for the next task.
+Work resumed at the user's request in September 2026 on `feat/modern-website-refresh`. The user rejected the taller header and photo-led hero; the original header and logo showcase have been restored. Preserve the slim mobile header and existing mobile banner dimensions, spacing, and order. Modernization should focus on radii, colors, typography, and animations. Business information and the sage/gold identity must remain intact. Local changes are not yet confirmed merged or deployed.
 
 ## Immediate Actions
 
-1. Pull latest `main`, confirm a clean working tree, and smoke-test production.
-2. Audit current local SEO visibility and Google Business Profile.
-3. Update `docs/SEO_PLAN.md` with verified search and GBP observations.
-4. Check and fix non-numeric image height attributes only if still confirmed as a cleanup task.
-5. Confirm homepage `script.js` loading behavior only if still relevant after current deployment behavior.
+1. Review the desktop-only addition: from 1100px, the existing logo sits beside the original introduction/contact actions, with photos below. Mobile keeps its original layout. The keyboard skip link is only visible on focus. A sharper SVG version of the existing banner is still pending.
+2. Recheck the Firebase PR preview on desktop/mobile, including Lighthouse, navigation, gallery, save-contact, and 404 behavior before merging.
+3. Resume the local SEO/Google Business Profile audit; it has not been completed by this visual update.
+4. Update `docs/SEO_PLAN.md` only with verified search and GBP observations.
+5. Check non-numeric image height attributes separately without changing image proportions unintentionally.
 
 ## SEO Next Actions
 

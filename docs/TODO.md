@@ -1,5 +1,17 @@
 # TODO
 
+## Visual Refresh In Progress
+
+September 2026, branch `feat/modern-website-refresh`: surface polish with the original slim mobile header and logo banner preserved. The user rejected the larger header/photo-hero layout. The SEO audit remains pending.
+
+- [x] Restore the original header and logo-led hero after feedback; keep Montserrat and lightweight interaction improvements.
+- [ ] Review the corrected radii, colors, shadows, and animation polish.
+- [x] Add desktop-only logo/copy arrangement at 1100px and above, without changing mobile layout.
+- [ ] Review the desktop addition in the local preview before merging.
+- [ ] Prepare a sharper SVG banner that preserves the existing composition and mobile dimensions.
+- [ ] Verify the Firebase PR preview and rerun Lighthouse before merge.
+- [ ] Confirm production behavior after an approved merge.
+
 ## Current Priority
 
 - [x] Rewrite `README.md` as a concise public project overview.
@@ -35,10 +47,10 @@
 - [x] Update save-contact page with licensed nurse and nurse-led wording.
 - [x] Change mobile hamburger button to a close icon while the menu is open.
 - [ ] Fix non-numeric image height attributes if confirmed as a cleanup task.
-- [ ] Confirm homepage `script.js` loading behavior against performance notes.
+- [x] Load homepage `script.js` with `defer` and avoid a first-paint mobile navigation layout shift in the refresh branch.
 
 ## Later
 
 - [ ] Create the first local SEO landing page after copy is approved.
-- [ ] Consider a V2 design polish after documentation, deployment, and SEO groundwork.
+- [ ] Extend the visual refresh to the remaining sections after the first-stage design is approved.
 - [ ] Consider analytics only if it supports clear business decisions.
