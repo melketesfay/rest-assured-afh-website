@@ -3,6 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script>
+      // Select the mobile menu layout before the first paint.
+      document.documentElement.classList.add("js");
+    </script>
     <meta
       content="Rest Assured AFH is a licensed adult family home in Everett / Silver Firs, WA, offering warm, family-centered residential care in a comfortable home setting."
       name="description"
@@ -12,7 +16,7 @@
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
     <link
       as="style"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@600;700;800&amp;display=swap"
       onload="
         this.onload = null;
         this.rel = 'stylesheet';
@@ -21,7 +25,7 @@
     />
     <noscript>
       <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=Montserrat:wght@600;700;800&amp;display=swap"
         rel="stylesheet"
       />
     </noscript>
@@ -37,6 +41,7 @@
       href="assets/apple-touch-icon.png"
     />
     <link href="style.css" rel="stylesheet" />
+    <link href="home-refresh.css" rel="stylesheet" />
     <link href="https://restassuredafh.com/" rel="canonical" />
     <meta content="index, follow" name="robots" />
     <meta content="website" property="og:type" />
@@ -100,13 +105,12 @@
       }
     </script>
   </head>
-  <body>
-    <div class="site-bg-glow site-bg-glow-left"></div>
-    <div class="site-bg-glow site-bg-glow-right"></div>
+  <body class="home-page">
+    <a class="skip-link" href="#top">Skip to content</a>
     <header class="site-header">
       <div class="container header-inner">
         <a
-          aria-label="Rest Assured AFH home"
+          aria-label="Rest Assured AFH - Adult Family Home Care - home"
           class="brand brand-v22"
           href="#top"
         >
@@ -133,6 +137,7 @@
           aria-expanded="false"
           aria-label="Open navigation"
           class="nav-toggle"
+          type="button"
         >
           <span> </span>
           <span> </span>
@@ -148,101 +153,103 @@
         </nav>
       </div>
     </header>
-    <main id="top">
-      <section class="logo-showcase" data-reveal="">
-        <div class="container">
-          <div class="logo-showcase-card">
-            <img
-              alt="Rest Assured AFH Adult Family Home Care logo"
-              decoding="async"
-              height="480"
-              fetchpriority="high"
-              loading="eager"
-              src="assets/logo-v23-full-display.webp"
-              width="720"
-            />
-          </div>
-        </div>
-      </section>
-      <section class="hero" data-reveal="">
-        <div class="container hero-grid">
-          <div class="hero-copy">
-            <p class="eyebrow">
-              Licensed Adult Family Home &middot; Everett / Silver Firs,
-              Washington
-            </p>
-            <h1>Warm, reassuring care in a place that feels like home.</h1>
-            <p class="hero-lead">
-              Rest Assured AFH provides licensed nurse-led adult family home
-              care in a peaceful, family-centered environment. Our goal is
-              simple: to help residents feel safe, respected, comfortable, and
-              truly cared for every day.
-            </p>
-            <div class="hero-actions">
-              <a
-                class="button button-primary"
-                href="mailto:restassuredafh@gmail.com?subject=Schedule%20a%20Tour%20-%20Rest%20Assured%20AFH"
-              >
-                Schedule a Tour
-              </a>
-              <a
-                class="button button-secondary button-call"
-                href="tel:+12064033838"
-              >
-                Call Us: (206) 403-3838
-              </a>
-            </div>
-            <div class="hero-badges">
-              <span> Family-Centered </span>
-              <span> Nurse-Led </span>
-              <span> Home-Like Setting </span>
-            </div>
-            <p class="hero-note">
-              License #:
-              <span class="placeholder"> 758759 </span>
-            </p>
-          </div>
-          <div class="hero-visual-card" data-parallax="0.10">
-            <div class="hero-image-frame hero-image-main">
+    <main id="top" tabindex="-1">
+      <div class="home-intro">
+        <section class="logo-showcase" data-reveal="">
+          <div class="container">
+            <div class="logo-showcase-card">
               <img
-                alt="Exterior of Rest Assured AFH, a licensed adult family home in Everett, Washington"
-                data-full-src="assets/real-exterior-front.webp"
+                alt="Rest Assured AFH Adult Family Home Care logo"
                 decoding="async"
+                height="480"
                 fetchpriority="high"
                 loading="eager"
-                src="assets/real-exterior-front-640-q72.webp"
-                width="640"
-                height="404"
+                src="assets/logo-v23-full-display.webp"
+                width="720"
               />
             </div>
-            <div class="hero-mini-panels">
-              <div class="mini-panel">
+          </div>
+        </section>
+        <section class="hero" data-reveal="">
+          <div class="container hero-grid">
+            <div class="hero-copy">
+              <p class="eyebrow">
+                Licensed Adult Family Home &middot; Everett / Silver Firs,
+                Washington
+              </p>
+              <h1>Warm, reassuring care in a place that feels like home.</h1>
+              <p class="hero-lead">
+                Rest Assured AFH provides licensed nurse-led adult family home
+                care in a peaceful, family-centered environment. Our goal is
+                simple: to help residents feel safe, respected, comfortable, and
+                truly cared for every day.
+              </p>
+              <div class="hero-actions">
+                <a
+                  class="button button-primary"
+                  href="mailto:restassuredafh@gmail.com?subject=Schedule%20a%20Tour%20-%20Rest%20Assured%20AFH"
+                >
+                  Schedule a Tour
+                </a>
+                <a
+                  class="button button-secondary button-call"
+                  href="tel:+12064033838"
+                >
+                  Call Us: (206) 403-3838
+                </a>
+              </div>
+              <div class="hero-badges">
+                <span> Family-Centered </span>
+                <span> Nurse-Led </span>
+                <span> Home-Like Setting </span>
+              </div>
+              <p class="hero-note">
+                License #:
+                <span class="placeholder"> 758759 </span>
+              </p>
+            </div>
+            <div class="hero-visual-card" data-parallax="0.10">
+              <div class="hero-image-frame hero-image-main">
                 <img
-                  alt="Open dining and kitchen area inside Rest Assured AFH in Everett, Washington"
-                  data-full-src="assets/real-open-floor-dining-kitchen.webp"
+                  alt="Exterior of Rest Assured AFH, a licensed adult family home in Everett, Washington"
+                  data-full-src="assets/real-exterior-front.webp"
                   decoding="async"
-                  height="270"
-                  loading="lazy"
-                  sizes="(max-width: 900px) 50vw, 25vw"
-                  src="assets/real-open-floor-dining-kitchen-480.webp"
-                  srcset="
-                    assets/real-open-floor-dining-kitchen-480.webp  480w,
-                    assets/real-open-floor-dining-kitchen-760.webp  760w,
-                    assets/real-open-floor-dining-kitchen.webp     1800w
-                  "
-                  width="480"
+                  fetchpriority="high"
+                  loading="eager"
+                  src="assets/real-exterior-front-640-q72.webp"
+                  width="640"
+                  height="404"
                 />
               </div>
-              <div class="mini-panel quote-panel">
-                <p>
-                  Compassion, dignity, and peace of mind &mdash; all in a
-                  setting that feels personal and calm.
-                </p>
+              <div class="hero-mini-panels">
+                <div class="mini-panel">
+                  <img
+                    alt="Open dining and kitchen area inside Rest Assured AFH in Everett, Washington"
+                    data-full-src="assets/real-open-floor-dining-kitchen.webp"
+                    decoding="async"
+                    height="270"
+                    loading="lazy"
+                    sizes="(max-width: 900px) 50vw, 25vw"
+                    src="assets/real-open-floor-dining-kitchen-480.webp"
+                    srcset="
+                      assets/real-open-floor-dining-kitchen-480.webp  480w,
+                      assets/real-open-floor-dining-kitchen-760.webp  760w,
+                      assets/real-open-floor-dining-kitchen.webp     1800w
+                    "
+                    width="480"
+                  />
+                </div>
+                <div class="mini-panel quote-panel">
+                  <p>
+                    Compassion, dignity, and peace of mind &mdash; all in a
+                    setting that feels personal and calm.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
       <section class="intro-ribbon" data-reveal="">
         <div class="container intro-ribbon-grid">
           <article>
@@ -757,6 +764,6 @@
         <p>Built with ❤ by Rest Assured AFH.</p>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </body>
 </html>

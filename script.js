@@ -6,6 +6,7 @@ if (year) year.textContent = new Date().getFullYear();
 
 if (navToggle && siteNav) {
   const setNavState = (isOpen) => {
+    siteNav.classList.toggle("open", isOpen);
     navToggle.setAttribute("aria-expanded", String(isOpen));
     navToggle.setAttribute(
       "aria-label",
@@ -14,59 +15,75 @@ if (navToggle && siteNav) {
   };
 
   navToggle.addEventListener("click", () => {
-    const isOpen = siteNav.classList.toggle("open");
-    setNavState(isOpen);
+    setNavState(navToggle.getAttribute("aria-expanded") !== "true");
   });
 
   siteNav.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => {
-      siteNav.classList.remove("open");
       setNavState(false);
     });
   });
-}
 
-// V2.2 smooth repeatable scroll reveals, no hero parallax jitter
-const reduceMotionV22 = window.matchMedia(
-  "(prefers-reduced-motion: reduce)",
-).matches;
-
-if (!reduceMotionV22) {
-  const revealItems = document.querySelectorAll(
-    "[data-reveal], .reveal-up, .service-card, .gallery-card, .feature-item, .intro-ribbon article, .real-photo-strip img",
-  );
-
-  revealItems.forEach((item, index) => {
-    if (
-      item.classList.contains("service-card") ||
-      item.classList.contains("gallery-card") ||
-      item.classList.contains("feature-item") ||
-      item.tagName === "IMG"
-    ) {
-      item.style.setProperty(
-        "--reveal-delay",
-        `${Math.min(index % 5, 4) * 55}ms`,
-      );
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && siteNav.classList.contains("open")) {
+      setNavState(false);
+      navToggle.focus();
     }
   });
 
+  document.addEventListener("click", (event) => {
+    if (!siteNav.contains(event.target) && !navToggle.contains(event.target)) {
+      setNavState(false);
+    }
+  });
+
+  siteNav.addEventListener("focusout", (event) => {
+    if (!siteNav.contains(event.relatedTarget) && event.relatedTarget !== navToggle) {
+      setNavState(false);
+    }
+  });
+
+  window.matchMedia("(max-width: 760px)").addEventListener("change", () => {
+    setNavState(false);
+  });
+}
+
+// Only enhance below-the-fold content; the document is visible without JavaScript.
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+if (!reducedMotion.matches && "IntersectionObserver" in window) {
+  const revealSelector = "[data-reveal], .reveal-up, .service-card, .gallery-card, .feature-item, .intro-ribbon article, .real-photo-strip img";
+  const revealItems = Array.from(document.querySelectorAll(revealSelector)).filter(
+    (item) => !item.querySelector(revealSelector),
+  );
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("is-visible");
-        } else if (entry.boundingClientRect.top > window.innerHeight) {
-          entry.target.classList.remove("is-visible");
+          entry.target.classList.remove("reveal-pending");
+          observer.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.14,
-      rootMargin: "0px 0px -7% 0px",
+      threshold: 0.06,
+      rootMargin: "0px 0px -24px 0px",
     },
   );
 
-  revealItems.forEach((item) => observer.observe(item));
+  revealItems.forEach((item, index) => {
+    if (item.getBoundingClientRect().top >= window.innerHeight) {
+      item.style.setProperty("--reveal-delay", `${(index % 3) * 60}ms`);
+      item.classList.add("reveal-pending");
+      observer.observe(item);
+    }
+  });
+
+  reducedMotion.addEventListener("change", (event) => {
+    if (!event.matches) return;
+    observer.disconnect();
+    revealItems.forEach((item) => item.classList.remove("reveal-pending"));
+  });
 }
 
 // V2.4 real-photo lightbox

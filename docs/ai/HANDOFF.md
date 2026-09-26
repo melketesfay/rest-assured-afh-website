@@ -110,7 +110,7 @@ The README has been rewritten as a public project overview. Detailed technical/p
 
 ## Current user goals
 
-The user wants to professionalize the project before the next design overhaul.
+The repository foundation is complete. In September 2026, the user requested modern surface styling while preserving all business information and the sage/gold identity. The user rejected the first preview's taller header and photo-led hero. Preserve the original slim mobile header and logo banner; focus on radii, colors, Montserrat typography, and subtle motion. A desktop-only arrangement is now implemented from 1100px, with the existing logo beside the introduction and contact actions. See `NEXT_ACTIONS.md` and `../TECHNICAL_DOCUMENTATION.md` for the corrected working preview on `feat/modern-website-refresh`.
 
 Completed foundation work:
 
@@ -129,11 +129,11 @@ Completed foundation work:
 
 Current priorities:
 
-1. Audit local SEO visibility and Google Business Profile.
-2. Update `docs/SEO_PLAN.md` with verified findings.
-3. Plan and implement legitimate local SEO improvements.
-4. Review remaining cleanup items only if they are still relevant.
-5. Later do V2 design overhaul.
+1. Review the corrected preview: original mobile header/banner preserved, with logo and introductory copy arranged side by side only from 1100px. The skip link appears only on keyboard focus.
+2. Validate the Firebase PR preview before any approved merge/deployment.
+3. Resume the pending local SEO visibility and Google Business Profile audit.
+4. Update `docs/SEO_PLAN.md` with verified findings and implement legitimate local SEO improvements.
+5. Extend the redesign only after feedback on the initial visual direction.
 
 ## Current SEO concern
 
@@ -209,9 +209,9 @@ Current stack:
 - Do not invent care guarantees, medical claims, staff qualifications, availability, pricing, or testimonials.
 - All claims must be grounded in provided business facts.
 
-## Project Pause Note
+## Project Resume Note
 
-The project is intentionally paused after the June 2026 Firebase/deployment/documentation/404/mobile-polish work. When resuming after the pause, start from `main`, inspect the live site and repository state, and open a focused branch for the next task.
+Work resumed in September 2026 at the user's request. The current refresh is a working-branch preview, not a confirmed production deployment. Inspect the working tree before switching branches so uncommitted design changes are not lost or mistaken for production state.
 
 ## Suggested next safe working order after pause
 
@@ -224,7 +224,7 @@ The project is intentionally paused after the June 2026 Firebase/deployment/docu
 3. Perform SEO audit and Google Business Profile review.
 4. Update `docs/SEO_PLAN.md` with verified findings.
 5. Plan one focused local SEO implementation branch.
-6. Only after SEO groundwork: consider V2 design polish.
+6. Follow the user-approved visual-refresh scope in `NEXT_ACTIONS.md`; the earlier SEO-first ordering has been superseded for the current branch only.
 
 ## Handoff instruction for future AI/Codex
 
