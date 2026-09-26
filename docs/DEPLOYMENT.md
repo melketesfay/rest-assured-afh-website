@@ -59,7 +59,8 @@ Excluded from public deployment:
 Caching approach:
 
 - `/assets/**` uses long-lived immutable caching.
-- `style.css` and `script.js` use short caching because filenames are not content-hashed.
+- `style.css`, `home-refresh.css`, and `script.js` use `public, max-age=0, must-revalidate` because filenames are not content-hashed. Browsers may store these files but must revalidate before reusing them; unchanged files can return 304 responses.
+- HTML references these files with `?v=20260926` to bypass copies stored under the earlier one-hour cache policy. This changes the request URL without adding a build step. Future edits at the same URL rely on revalidation after this policy is deployed.
 - HTML, `robots.txt`, `sitemap.xml`, and `downloads/contact.vcf` use conservative revalidation.
 
 Validated preview URL:

@@ -36,7 +36,16 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=3600, must-revalidate"
+            "value": "public, max-age=0, must-revalidate"
+          }
+        ]
+      },
+      {
+        "source": "/home-refresh.css",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=0, must-revalidate"
           }
         ]
       },
@@ -45,7 +54,7 @@
         "headers": [
           {
             "key": "Cache-Control",
-            "value": "public, max-age=3600, must-revalidate"
+            "value": "public, max-age=0, must-revalidate"
           }
         ]
       },

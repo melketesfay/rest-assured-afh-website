@@ -49,7 +49,7 @@
 
 ## September 2026 Visual Refresh
 
-Working branch: `feat/modern-website-refresh`. This is a local design preview, not a confirmed production deployment.
+Working branch: `feat/modern-website-refresh`. The refresh was observed on the public site on September 26, 2026. The cache and initial-content follow-up below is local and still requires deployment verification.
 
 - The first photo-led hero and taller header were rejected by the user and reverted. The original header and image sources remain in use. Mobile header height, banner dimensions, spacing, and order must remain unchanged.
 - Surface polish includes Montserrat headings, Inter body text, restrained 8px radii on cards/buttons, lighter shadows, accessible sage/gold-adjacent colors, and subtle motion. The mobile logo showcase keeps its existing geometry and styling.
@@ -58,9 +58,17 @@ Working branch: `feat/modern-website-refresh`. This is a local design preview, n
 - The skip link is a keyboard accessibility control, not a permanent navigation button. It is visually clipped unless `:focus-visible` matches; Tab reveals it, Enter focuses `main#top`, and moving focus away hides it again. Pointer-only focus does not reveal it.
 - Existing business copy, original H1, contact links, SEO metadata, canonical URL, JSON-LD, and QR/vCard targets are preserved.
 - Shared typography also applies to the save-contact and 404 pages; their content and layouts are otherwise unchanged.
-- Scroll reveals run once, use opacity/transform, and leave content visible without JavaScript. Reduced-motion preferences are respected.
+- Scroll reveals run once, use opacity/transform, and leave content visible without JavaScript. Reduced-motion preferences are respected. The introduction (`.hero-copy`, including the heading and contact actions) is never gated by a reveal animation; `data-reveal` is applied to its sibling photo group instead of the whole `.hero` section.
 - Mobile navigation supports Escape, outside clicks, link selection, and viewport changes. Without JavaScript, navigation links remain visible.
-- No runtime package dependencies, build step, hosting configuration, or production deployment were added.
+- No runtime package dependencies or build step were added. The follow-up adjusts Firebase cache headers for unversioned CSS/JS filenames; see `DEPLOYMENT.md`.
+
+### Mobile Follow-Up
+
+A mobile visitor reported a visible unstyled skip link after deployment. Fresh mobile Chrome sessions loaded the correct rule, while a simulated pre-refresh stylesheet reproduced the plain underlined link. Production `style.css` still allowed one hour of cache reuse, making stale CSS a likely cause, not a confirmed diagnosis of the visitor's device. The follow-up changes CSS/JS URLs to bypass those cached copies and requires revalidation for subsequent loads. Keep the accessible skip link and its focus-only styling; do not hide it from assistive technology or disable it on touch devices.
+
+Local Chrome regression checks cover a prefilled old CSS/JS cache, initial introduction visibility at six viewport sizes (including mobile landscape), preserved later scroll reveals, touch and keyboard behavior, no-JavaScript rendering, and automated axe A/AA checks on all three pages. Real-device and deployed Firebase cache-header verification remain pending.
+
+### Earlier Refresh Checks
 
 The previously reported 97-point Lighthouse result belonged to the rejected photo-hero prototype. The latest local gzip-served runs with the desktop addition scored 99 performance and 100 accessibility, best practices, and SEO on both desktop and mobile, with CLS 0 on desktop and 0.019 on mobile. The original logo dimensions are reserved before image decoding with block layout and a 3:2 aspect ratio; final mobile banner geometry is unchanged. These are individual local lab results, not production guarantees. Recheck the Firebase PR preview before merge.
 
