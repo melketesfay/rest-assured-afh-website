@@ -23,6 +23,8 @@ Work resumed at the user's request in September 2026 on `feat/modern-website-ref
 
 ## Immediate Actions
 
+The refresh is now visible on the public site. A local follow-up removes scroll gating from the introduction and changes CSS/JS URLs plus cache headers after a mobile report of stale styling. Verify the deployed follow-up on the reporting mobile device, including skip-link visibility on normal load versus keyboard focus. Do not treat local emulation as physical-device confirmation.
+
 1. Review the desktop-only addition: from 1100px, the existing logo sits beside the original introduction/contact actions, with photos below. Mobile keeps its original layout. The keyboard skip link is only visible on focus. A sharper SVG version of the existing banner is still pending.
 2. Recheck the Firebase PR preview on desktop/mobile, including Lighthouse, navigation, gallery, save-contact, and 404 behavior before merging.
 3. Resume the local SEO/Google Business Profile audit; it has not been completed by this visual update.
