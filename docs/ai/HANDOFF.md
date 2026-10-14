@@ -110,6 +110,8 @@ The README has been rewritten as a public project overview. Detailed technical/p
 
 ## Current user goals
 
+October 14, 2026: the active task is a homepage acknowledgement of Assisted Living Magazine on `feat/assisted-living-magazine-badge`. The user's supplied badge and a text link point directly to the business feature; copy sits below the badge. Local desktop/mobile checks passed, and PR/deployment review is pending. See the "Magazine Acknowledgement" section in `../TECHNICAL_DOCUMENTATION.md`. The September refresh and mobile cache fix are already merged into `main` according to Git history.
+
 The repository foundation is complete. In September 2026, the user requested modern surface styling while preserving all business information and the sage/gold identity. The user rejected the first preview's taller header and photo-led hero. Preserve the original slim mobile header and logo banner; focus on radii, colors, Montserrat typography, and subtle motion. A desktop-only arrangement is now implemented from 1100px, with the existing logo beside the introduction and contact actions. See `NEXT_ACTIONS.md` and `../TECHNICAL_DOCUMENTATION.md` for the corrected working preview on `feat/modern-website-refresh`.
 
 Completed foundation work:

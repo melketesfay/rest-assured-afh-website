@@ -141,6 +141,72 @@
   color: #273127;
 }
 
+.acknowledgements-section {
+  padding: 3.5rem 0;
+  border-block: 1px solid var(--line);
+  background: #f1f5f2;
+  text-align: center;
+}
+
+.acknowledgements-section .eyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.acknowledgements-section h2 {
+  max-width: 48rem;
+  margin-inline: auto;
+  font-size: 2rem;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.acknowledgements-list {
+  display: grid;
+  gap: 2.5rem;
+  padding: 0;
+  margin: 2rem 0 0;
+  list-style: none;
+}
+
+.acknowledgement-item {
+  max-width: 46rem;
+  margin-inline: auto;
+}
+
+.acknowledgement-badge {
+  display: block;
+  width: min(100%, 20rem);
+  margin-inline: auto;
+  border-radius: 8px;
+}
+
+.acknowledgement-badge img {
+  width: 100%;
+  height: auto;
+}
+
+.acknowledgement-copy {
+  margin-top: 1.5rem;
+}
+
+.acknowledgement-copy p {
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+.acknowledgement-link {
+  display: inline-block;
+  margin-top: 0.25rem;
+  color: var(--sage-deep);
+  font-weight: 700;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.acknowledgement-link:hover {
+  text-decoration-thickness: 2px;
+}
+
 @media (min-width: 1100px) {
   .home-intro {
     display: grid;
@@ -280,6 +346,16 @@
     display: flex;
     position: static;
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .acknowledgements-section h2 {
+    font-size: 1.75rem;
+  }
+
+  .acknowledgement-badge {
+    width: min(100%, 17rem);
   }
 }
 

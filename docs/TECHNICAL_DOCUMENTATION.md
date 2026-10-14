@@ -79,3 +79,15 @@ The desktop addition was checked at 320, 390, 760, 1024, 1099, 1100, 1280, 1440,
 ## Pending Documentation
 
 - Document exact image optimization workflow.
+
+## Magazine Acknowledgement
+
+Added locally on October 14, 2026, on `feat/assisted-living-magazine-badge`; deployment is pending.
+
+- Homepage section `#acknowledgements` follows "Why Families Choose Us" and precedes the location section.
+- The publisher-provided "Best in Senior Living" badge and text link both open the [Rest Assured Adult Family Home feature](https://assistedlivingmagazine.com/assisted-living/rest-assured-adult-family-home/) in a new tab. Link names announce the new tab for assistive technology.
+- The acknowledgement copy appears below the badge on desktop and mobile. It attributes the recognition to Assisted Living Magazine and retains the owner's gratitude statement; it does not assert a ranking, formal certification, or unverified selection criteria.
+- `assets/acknowledgements/BestinSeniorLiving_badge.png` is the supplied original. The page uses a 728x574 WebP derivative with transparency, lazy loading, and explicit dimensions. Reference screenshots are not used as site images.
+- A semantic list holds the single acknowledgement. Additional acknowledgements can be added later; no carousel, extra runtime dependency, or new navigation item is introduced.
+- The existing reveal animation and reduced-motion/no-JavaScript fallbacks apply to the acknowledgement item.
+- Local checks passed at 320, 390, 768, and 1440px: the badge renders without distortion, copy remains below it, and no horizontal overflow occurs. The badge opens the correct feature URL in a separate tab, keyboard focus is visible, and the section is usable without JavaScript. Automated axe A/AA checks found no violations in the new section. Firebase PR preview and production verification remain pending.
