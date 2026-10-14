@@ -221,6 +221,12 @@ The user subsequently requested the desktop addition. At 1100px and above, the o
 
 A sharper SVG banner should reproduce the existing composition, not introduce a different layout. Preserve all business information and the established sage/gold identity. Keep Montserrat headings, Inter body text, lightweight animation, reduced-motion support, and usable content/navigation without JavaScript. No framework, new runtime dependency, or deployment change is required.
 
+### October 2026 magazine acknowledgement
+
+The owner received a complimentary feature offer and a "Best in Senior Living" badge from Assisted Living Magazine. The user requested a dedicated homepage acknowledgement linking directly to the business feature, with copy below the badge.
+
+Decision: attribute the recognition to the publisher and preserve its supplied badge. Do not expand this into an independently verified ranking, formal accreditation, review score, or claims about award-selection criteria. The email does not document a quality-of-care, leadership, or resident-satisfaction assessment. Keep the original badge asset and use an optimized local WebP derivative in production. Start with one static acknowledgement; a future carousel requires a separate request.
+
 ### Local SEO approach
 
 Decision: Use legitimate but assertive local SEO.
